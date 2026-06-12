@@ -12,8 +12,6 @@ import "remixicon/fonts/remixicon.css";
 
 AOS.init({ once: true, duration: 900, easing: "ease-out-quart" });
 
-
-
 function App() {
   const aboutRef = useRef(null);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -74,7 +72,6 @@ function App() {
             className="animate__animated animate__fadeInUp"
             style={{ maxWidth: "580px" }}
           >
-
             {/* Heading */}
             <h1
               style={{
@@ -86,7 +83,17 @@ function App() {
                 color: "#f0f0f5",
               }}
             >
-              <span style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: "0.45em", fontWeight: "500", letterSpacing: "0.05em", marginBottom: "0.6rem", textTransform: "uppercase" }}>
+              <span
+                style={{
+                  display: "block",
+                  color: "rgba(255,255,255,0.5)",
+                  fontSize: "0.45em",
+                  fontWeight: "500",
+                  letterSpacing: "0.05em",
+                  marginBottom: "0.6rem",
+                  textTransform: "uppercase",
+                }}
+              >
                 Hi, saya
               </span>
               <ShinyText
@@ -126,7 +133,7 @@ function App() {
             {/* CTA Buttons */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
               <a
-                href="./assets/CV.pdf"
+                href="./assets/CV-Zelvia.pdf"
                 download="Zelvia_Rani_CV.pdf"
                 className="btn-primary"
               >
@@ -148,10 +155,22 @@ function App() {
                 marginTop: "2rem",
               }}
             >
-              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", letterSpacing: "0.05em" }}>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  color: "rgba(255,255,255,0.35)",
+                  letterSpacing: "0.05em",
+                }}
+              >
                 FIND ME ON
               </span>
-              <div style={{ height: "1px", flex: 1, background: "rgba(255,255,255,0.08)" }} />
+              <div
+                style={{
+                  height: "1px",
+                  flex: 1,
+                  background: "rgba(255,255,255,0.08)",
+                }}
+              />
               <div style={{ display: "flex", gap: "0.5rem" }}>
                 <a
                   href="https://github.com/zelviarani16"
@@ -212,7 +231,10 @@ function App() {
         {/* ═══════════════════════════════════════════════════════════════
             ABOUT SECTION
         ══════════════════════════════════════════════════════════════════ */}
-        <section id="about" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
+        <section
+          id="about"
+          style={{ paddingTop: "2rem", paddingBottom: "4rem" }}
+        >
           <div data-aos="fade-up">
             <div className="section-label">About Me</div>
             <h2
@@ -233,7 +255,8 @@ function App() {
                 marginBottom: "2.5rem",
               }}
             >
-              Mahasiswi yang bersemangat di bidang teknologi dan pengembangan web.
+              Mahasiswi yang bersemangat di bidang teknologi dan pengembangan
+              web.
             </p>
           </div>
 
@@ -286,21 +309,51 @@ function App() {
                 gap: "1.5rem",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <i className="ri-map-pin-2-line" style={{ color: "#a78bfa", fontSize: "0.9rem" }} />
-                <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.45)" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
+                <i
+                  className="ri-map-pin-2-line"
+                  style={{ color: "#a78bfa", fontSize: "0.9rem" }}
+                />
+                <span
+                  style={{
+                    fontSize: "0.82rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}
+                >
                   Surabaya, Indonesia
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <i className="ri-graduation-cap-line" style={{ color: "#a78bfa", fontSize: "0.9rem" }} />
-                <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.45)" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
+                <i
+                  className="ri-graduation-cap-line"
+                  style={{ color: "#a78bfa", fontSize: "0.9rem" }}
+                />
+                <span
+                  style={{
+                    fontSize: "0.82rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}
+                >
                   Universitas Airlangga
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <i className="ri-mail-line" style={{ color: "#a78bfa", fontSize: "0.9rem" }} />
-                <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.45)" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
+                <i
+                  className="ri-mail-line"
+                  style={{ color: "#a78bfa", fontSize: "0.9rem" }}
+                />
+                <span
+                  style={{
+                    fontSize: "0.82rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}
+                >
                   zelviarani16@gmail.com
                 </span>
               </div>
@@ -313,7 +366,10 @@ function App() {
         {/* ═══════════════════════════════════════════════════════════════
             SKILLS SECTION
         ══════════════════════════════════════════════════════════════════ */}
-        <section id="skills" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
+        <section
+          id="skills"
+          style={{ paddingTop: "2rem", paddingBottom: "4rem" }}
+        >
           <div data-aos="fade-up">
             <div className="section-label">Tech Stack</div>
             <h2
@@ -335,7 +391,8 @@ function App() {
                 maxWidth: "480px",
               }}
             >
-              Teknologi yang saya pelajari dan gunakan dalam proses pengembangan web dan aplikasi.
+              Teknologi yang saya pelajari dan gunakan dalam proses pengembangan
+              web dan aplikasi.
             </p>
           </div>
 
@@ -378,8 +435,6 @@ function App() {
               </div>
             ))}
           </div>
-
-
         </section>
 
         <div className="glow-divider" />
@@ -387,7 +442,10 @@ function App() {
         {/* ═══════════════════════════════════════════════════════════════
             PROJECTS SECTION
         ══════════════════════════════════════════════════════════════════ */}
-        <section id="project" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
+        <section
+          id="project"
+          style={{ paddingTop: "2rem", paddingBottom: "4rem" }}
+        >
           <div data-aos="fade-up">
             <div className="section-label">Portfolio</div>
             <h2
@@ -409,7 +467,8 @@ function App() {
                 maxWidth: "520px",
               }}
             >
-              Kumpulan proyek yang mencerminkan proses belajar dan eksplorasi saya dalam dunia pengembangan web.
+              Kumpulan proyek yang mencerminkan proses belajar dan eksplorasi
+              saya dalam dunia pengembangan web.
             </p>
           </div>
 
@@ -434,7 +493,10 @@ function App() {
         {/* ═══════════════════════════════════════════════════════════════
             CONTACT SECTION
         ══════════════════════════════════════════════════════════════════ */}
-        <section id="contact" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
+        <section
+          id="contact"
+          style={{ paddingTop: "2rem", paddingBottom: "4rem" }}
+        >
           <div data-aos="fade-up">
             <div className="section-label">Get In Touch</div>
             <h2
@@ -456,7 +518,8 @@ function App() {
                 maxWidth: "480px",
               }}
             >
-              Tertarik untuk berkolaborasi atau sekadar ngobrol? Kirim pesan dan saya akan membalasnya sesegera mungkin.
+              Tertarik untuk berkolaborasi atau sekadar ngobrol? Kirim pesan dan
+              saya akan membalasnya sesegera mungkin.
             </p>
           </div>
 
@@ -483,7 +546,11 @@ function App() {
               }}
             >
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="Pesan dari Portfolio Zelvia" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Pesan dari Portfolio Zelvia"
+              />
 
               <div className="form-group">
                 <label htmlFor="contact-name">Nama Lengkap</label>
@@ -519,7 +586,11 @@ function App() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary" style={{ justifyContent: "center" }}>
+              <button
+                type="submit"
+                className="btn-primary"
+                style={{ justifyContent: "center" }}
+              >
                 <i className="ri-send-plane-2-line" />
                 Kirim Pesan
               </button>
