@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiX, FiGithub } from 'react-icons/fi'; // Install react-icons jika belum: npm install react-icons
+import { FiX, FiGithub, FiExternalLink } from 'react-icons/fi'; // Install react-icons jika belum: npm install react-icons
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
   // State untuk mengontrol animasi penutupan
@@ -65,15 +65,45 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 {project.fullDescription}
             </p>
 
-            <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full w-full cursor-pointer border border-transparent hover:bg-violet-700 transition-colors"
-            >
-                <FiGithub />
-                <span>Source Code</span>
-            </a>
+            {/* --- ACTION BUTTONS --- */}
+            <div className="mt-4 flex flex-col sm:flex-row gap-3">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 font-semibold bg-zinc-800 p-3 px-5 rounded-full cursor-pointer border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 transition-all text-white"
+                >
+                  <FiGithub />
+                  <span>Source Code</span>
+                </a>
+              )}
+              
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full cursor-pointer border border-transparent hover:bg-violet-700 hover:shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all text-white"
+                >
+                  <FiExternalLink />
+                  <span>Live Preview</span>
+                </a>
+              )}
+
+              {/* Tampilkan tombol default jika belum ada link yang diatur */}
+              {!project.githubUrl && !project.liveUrl && project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 font-semibold bg-violet-600 p-3 px-5 rounded-full cursor-pointer border border-transparent hover:bg-violet-700 hover:shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all text-white"
+                >
+                  <FiGithub />
+                  <span>Source Code</span>
+                </a>
+              )}
+            </div>
         </div>
       </div>
        {/* CSS untuk animasi */}

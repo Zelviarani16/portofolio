@@ -1,42 +1,149 @@
 import { useState, useEffect } from "react";
 
 const Navbar = ({ hidden = false }) => {
-  // ⛔ Saat hidden, jangan render apa pun
   if (hidden) return null;
 
-  const [active, setActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setActive(window.scrollY > 150);
-    handleScroll(); // init posisi saat mount
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#project", label: "Projects" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <nav className="navbar relative z-50 py-7 flex items-center justify-between px-6 md:px-12">
-      {/* Logo */}
-      <div className="logo">
-        <h1 className="text-3xl font-bold text-white p-1 md:bg-transparent md:text-white">
-          Portofolio
-        </h1>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled ? "navbar-scrolled py-4" : "py-6"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#home" className="flex items-center gap-2 group" style={{ textDecoration: "none" }}>
+          <span
+            style={{
+              fontWeight: "700",
+              fontSize: "1rem",
+              color: "#f0f0f5",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Portofolio<span style={{ color: "#a78bfa" }}>.</span>
+          </span>
+        </a>
+
+        {/* Desktop Menu – flushed right, no Hire Me */}
+        <ul className="hidden md:flex items-center gap-8" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            outline: "none",
+          }}
+          aria-label="Toggle menu"
+        >
+          <span
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#f0f0f5",
+              borderRadius: "2px",
+              transition: "all 0.3s ease",
+              transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
+            }}
+          />
+          <span
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#f0f0f5",
+              borderRadius: "2px",
+              transition: "all 0.3s ease",
+              opacity: menuOpen ? 0 : 1,
+            }}
+          />
+          <span
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#f0f0f5",
+              borderRadius: "2px",
+              transition: "all 0.3s ease",
+              transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+            }}
+          />
+        </button>
       </div>
 
-      {/* Menu */}
-      <ul
-        className={`flex items-center sm:gap-10 gap-4 
-          md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0 
-          md:opacity-100 bg-white/10 backdrop-blur-md 
-          md:bg-transparent md:backdrop-blur-none
-          p-4 rounded-br-2xl rounded-bl-2xl 
-          transition-all md:transition-none
-          ${active ? "top-0 opacity-100" : "-top-10 opacity-0"}`}
+      {/* Mobile Menu */}
+      <div
+        style={{
+          maxHeight: menuOpen ? "320px" : "0",
+          overflow: "hidden",
+          transition: "max-height 0.4s ease",
+          background: "rgba(12, 12, 15, 0.95)",
+          backdropFilter: "blur(20px)",
+          borderTop: menuOpen ? "1px solid rgba(255,255,255,0.06)" : "none",
+        }}
       >
-        <li><a href="#home" className="sm:text-lg text-base font-medium">Home</a></li>
-        <li><a href="#about" className="sm:text-lg text-base font-medium">About</a></li>
-        <li><a href="#project" className="sm:text-lg text-base font-medium">Project</a></li>
-        <li><a href="#contact" className="sm:text-lg text-base font-medium">Contact</a></li>
-      </ul>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: 0,
+            padding: "1rem 1.5rem 1.5rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.25rem",
+          }}
+        >
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  display: "block",
+                  padding: "10px 0",
+                  color: "rgba(255,255,255,0.75)",
+                  textDecoration: "none",
+                  fontSize: "0.95rem",
+                  fontWeight: "500",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  transition: "color 0.2s ease",
+                }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

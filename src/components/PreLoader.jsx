@@ -10,15 +10,9 @@ const PreLoader = () => {
 
   useEffect(() => {
     if (countDone) {
-      // Fade teks
-      const fadeTextTimer = setTimeout(() => setFadeText(true), 3000)
-
-      // Fade seluruh screen
+      const fadeTextTimer = setTimeout(() => setFadeText(true), 2500)
       const fadeScreenTimer = setTimeout(() => setFadeScreen(true), 2000)
-
-      // Unmount preloader setelah animasi fade selesai
       const hideTimer = setTimeout(() => setLoading(false), 3000)
-
       return () => {
         clearTimeout(fadeTextTimer)
         clearTimeout(fadeScreenTimer)
@@ -30,30 +24,63 @@ const PreLoader = () => {
   return (
     loading && (
       <div
-        className={`w-screen h-screen fixed flex items-center justify-center bg-black z-[10000] overflow-hidden transition-opacity duration-1000 ${
-          fadeScreen ? "opacity-0" : "opacity-100"
-        }`}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 10000,
+          overflow: "hidden",
+          background: "#0c0c0f",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "1.5rem",
+          transition: "opacity 1s ease",
+          opacity: fadeScreen ? 0 : 1,
+          pointerEvents: fadeScreen ? "none" : "all",
+        }}
       >
-        <Aurora
-          colorStops={["#577870", "#1F97A6", "#127B99"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-        <div
-          className={`absolute text-white text-6xl font-bold transition-all duration-1000 ${
-            fadeText ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
-          }`}
-        >
-          <CountUp
-            from={0}
-            to={100}
-            separator=","
-            direction="up"
-            duration={1}
-            className="count-up-text"
-            onEnd={() => setCountDone(true)}
+        <div style={{ position: "absolute", inset: 0, zIndex: -1, pointerEvents: "none" }}>
+          <Aurora
+            colorStops={["#3b0a6e", "#5b21b6", "#7c3aed"]}
+            blend={0.4}
+            amplitude={0.8}
+            speed={0.4}
           />
+        </div>
+
+        <div
+          style={{
+            transition: "all 1s ease",
+            opacity: fadeText ? 0 : 1,
+            transform: fadeText ? "scale(0.95)" : "scale(1)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "baseline", gap: "4px", fontSize: "5rem", fontWeight: "800", color: "#fff", lineHeight: "1" }}>
+            <CountUp
+              from={0}
+              to={100}
+              separator=","
+              direction="up"
+              duration={1.2}
+              className="count-up-text"
+              onEnd={() => setCountDone(true)}
+            />
+            <span
+              style={{
+                fontSize: "2.5rem",
+                fontWeight: "700",
+                color: "#a78bfa",
+                marginLeft: "4px",
+              }}
+            >
+              %
+            </span>
+          </div>
         </div>
       </div>
     )
