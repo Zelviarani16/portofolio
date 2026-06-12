@@ -253,7 +253,7 @@ function App() {
               Zelvia Rani Febrianti Dwi Saputri
             </h3>
             <BlurText
-              text="Saya adalah mahasiswa semester 4 Program D4 Teknik Informatika di Universitas Airlangga. Saya memiliki ketertarikan besar pada dunia web development dan terus berupaya meningkatkan kemampuan saya melalui proyek-proyek nyata dan keterlibatan dalam organisasi kampus."
+              text="Saya adalah mahasiswa D4 Teknik Informatika Universitas Airlangga yang memiliki minat di bidang web development. Saya senang mengembangkan website dan terus mengasah kemampuan melalui berbagai proyek, baik akademik maupun personal."
               delay={80}
               animateBy="words"
               direction="top"
@@ -265,7 +265,7 @@ function App() {
               }}
             />
             <BlurText
-              text="Saya aktif berorganisasi dan percaya bahwa pengalaman di luar kelas sama pentingnya dengan akademik. Saya senang mempelajari hal-hal baru, baik itu teknologi, desain, maupun cara kerja tim yang efektif."
+              text="Selain perkuliahan, saya aktif dalam organisasi kampus yang membantu saya mengembangkan kemampuan komunikasi, kerja sama tim, dan manajemen waktu. Saya memiliki semangat belajar yang tinggi, senang mengeksplorasi teknologi baru, dan selalu berusaha memberikan hasil terbaik dalam setiap kesempatan."
               delay={60}
               animateBy="words"
               direction="top"

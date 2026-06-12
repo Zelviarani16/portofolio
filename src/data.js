@@ -126,12 +126,11 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.jpg";
-import Proyek2 from "/assets/proyek/proyek2.jpg";
+import Proyek1 from "/assets/proyek/proyek1.png";
+import Proyek2 from "/assets/proyek/proyek2.png";
 import Proyek3 from "/assets/proyek/proyek3.jpg";
 import Proyek4 from "/assets/proyek/proyek4.jpg";
 import Proyek5 from "/assets/proyek/proyek5.jpg";
-import Proyek6 from "/assets/proyek/proyek6.jpg";
 
 export const listProyek = [
   {
@@ -140,20 +139,20 @@ export const listProyek = [
     title: "Bloomerie",
     subtitle: "E-commerce platform for a flower & gift shop business.",
     fullDescription:
-      "Bloomerie adalah platform e-commerce yang dikembangkan untuk mendukung bisnis toko bunga dan hadiah. Dibangun menggunakan teknologi web modern, platform ini memungkinkan pelanggan untuk menjelajahi produk, melakukan pemesanan, dan mengelola transaksi secara online. Project ini menjadi pengalaman nyata pertama dalam menggunakan React dan Next.js di lingkungan produksi.",
+      "Bloomerie adalah platform e-commerce untuk toko bunga yang menyediakan informasi tentang bisnis, katalog produk, dan artikel. Proyek ini masih dalam tahap pengembangan, saya berfokus pada pengembangan frontend menggunakan Next.js 16, Tailwind CSS v4, dan Framer Motion.",
     borderColor: "#7c3aed",
     gradient: "linear-gradient(145deg, #7c3aed, #0c0c0f)",
     githubUrl: "https://github.com/zelviarani16",
-    liveUrl: "https://namadomainanda.com", // Tambahkan baris ini untuk link preview!
+    liveUrl: "https://bloomerie.vercel.app",
     dad: "100",
   },
   {
     id: 2,
     image: Proyek2,
-    title: "Web Portfolio",
+    title: "Personal Web Portfolio",
     subtitle: "Personal portfolio website showcasing projects and skills.",
     fullDescription:
-      "Website portofolio pribadi yang dirancang untuk menampilkan perjalanan akademik, keterampilan teknis, dan project-project yang telah dikerjakan. Dibangun menggunakan React + Vite dengan animasi interaktif untuk memberikan kesan profesional dan modern kepada para recruiter maupun rekan kolaborasi.",
+      "Website portofolio pribadi yang dirancang untuk menampilkan profil, perjalanan akademik, keterampilan teknis, serta berbagai proyek yang telah dikerjakan. Dibangun menggunakan React.js 19, Vite, Tailwind CSS v4, Framer Motion, GSAP, OGL (WebGL), AOS, dan Animate.css untuk menghadirkan pengalaman pengguna yang responsif dan interaktif.",
     borderColor: "#6d28d9",
     gradient: "linear-gradient(145deg, #6d28d9, #0c0c0f)",
     url: "https://github.com/zelviarani16",
@@ -162,10 +161,10 @@ export const listProyek = [
   {
     id: 3,
     image: Proyek3,
-    title: "Project 3",
-    subtitle: "Coming soon - project description will be updated.",
+    title: "RSHP Web System",
+    subtitle: "Web-based hospital management and patient record system.",
     fullDescription:
-      "Detail project ini akan segera diperbarui. Nantikan pembaruan berikutnya.",
+      "Aplikasi manajemen Rumah Sakit Hewan Pendidikan (RSHP) berbasis web yang dikembangkan menggunakan PHP, Laravel Blade, CSS, dan MySQL. Sistem ini mendukung pengelolaan data pasien dan administrasi rumah sakit melalui fitur autentikasi pengguna serta operasi CRUD yang terintegrasi dengan database.",
     borderColor: "#5b21b6",
     gradient: "linear-gradient(145deg, #5b21b6, #0c0c0f)",
     url: "https://github.com/zelviarani16",
@@ -174,10 +173,10 @@ export const listProyek = [
   {
     id: 4,
     image: Proyek4,
-    title: "Project 4",
-    subtitle: "Coming soon - project description will be updated.",
+    title: "Inventory Management System",
+    subtitle: "Inventory system powered by MySQL Triggers, Functions, and Views.",
     fullDescription:
-      "Detail project ini akan segera diperbarui. Nantikan pembaruan berikutnya.",
+      "Sistem inventaris berbasis web yang dibangun menggunakan PHP, Laravel Blade, dan MySQL. Dilengkapi fitur autentikasi pengguna serta optimasi database melalui Trigger, Function, dan View untuk mendukung pengelolaan stok dan transaksi secara terintegrasi.",
     borderColor: "#7c3aed",
     gradient: "linear-gradient(145deg, #7c3aed, #0c0c0f)",
     url: "https://github.com/zelviarani16",
@@ -186,25 +185,13 @@ export const listProyek = [
   {
     id: 5,
     image: Proyek5,
-    title: "Project 5",
-    subtitle: "Coming soon - project description will be updated.",
+    title: "E-Ticketing Mobile",
+    subtitle: "Mobile E-Ticketing application powered by Laravel and Supabase",
     fullDescription:
-      "Detail project ini akan segera diperbarui. Nantikan pembaruan berikutnya.",
+      "Aplikasi pemesanan tiket berbasis mobile yang dikembangkan menggunakan Laravel sebagai backend framework, Supabase untuk pengelolaan database, dan Postman untuk pengujian serta dokumentasi API. Proyek ini berfokus pada integrasi layanan backend dan saat ini masih dalam tahap pengembangan.",
     borderColor: "#6d28d9",
     gradient: "linear-gradient(180deg, #6d28d9, #0c0c0f)",
     url: "https://github.com/zelviarani16",
     dad: "500",
-  },
-  {
-    id: 6,
-    image: Proyek6,
-    title: "Project 6",
-    subtitle: "Coming soon - project description will be updated.",
-    fullDescription:
-      "Detail project ini akan segera diperbarui. Nantikan pembaruan berikutnya.",
-    borderColor: "#5b21b6",
-    gradient: "linear-gradient(180deg, #5b21b6, #0c0c0f)",
-    url: "https://github.com/zelviarani16",
-    dad: "600",
   },
 ];
